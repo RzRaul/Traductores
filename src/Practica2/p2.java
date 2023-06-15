@@ -1,6 +1,5 @@
-package Practica2;
 
-public class main {
+public class p2 {
     public static void main(String[] args) {
 
         ListLexer lexer = new ListLexer("[a, b]");

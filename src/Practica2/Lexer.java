@@ -1,4 +1,3 @@
-package Practica2;
 
 public abstract class Lexer {
     public static final char EOF = (char)-1;

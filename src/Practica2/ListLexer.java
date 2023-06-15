@@ -1,5 +1,3 @@
-package Practica2;
-
 public class ListLexer extends Lexer{
     public static int NAME=2;
     public static int COMMA=3;
