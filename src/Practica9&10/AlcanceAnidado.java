@@ -10,8 +10,8 @@ public class AlcanceAnidado {
         
         BuiltInTypeSymbol t1 = (BuiltInTypeSymbol) currentScope.resolve("int");
         if(t1 == null) { System.out.println("Solo se acepta valores tipo int | float | void"); } // Excepcion de tipo
-
         currentScope.define(new VariableSymbol("i", t1));
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         BuiltInTypeSymbol returnType = (BuiltInTypeSymbol) currentScope.resolve("float");
    
@@ -26,11 +26,13 @@ public class AlcanceAnidado {
         VariableSymbol parameters[] = { new VariableSymbol("x", t2), new VariableSymbol("y", t3)};
 
         currentScope = new MethodSymbol("f", parameters, currentScope);
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         t1 = (BuiltInTypeSymbol) currentScope.resolve("float");
         if(t1 == null) { } // Excepcion de tipo
 
         currentScope.define(new VariableSymbol("i", t1));
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         currentScope = new LocalScope(currentScope);
 
@@ -38,6 +40,7 @@ public class AlcanceAnidado {
         if(t1 == null) { } // Excepcion de tipo
 
         currentScope.define(new VariableSymbol("z", t1));
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         VariableSymbol v1 = (VariableSymbol) currentScope.resolve("x");
         if(v1 ==  null) { } // Excepcion de tipo
@@ -60,6 +63,7 @@ public class AlcanceAnidado {
         if(t1 == null) { } // Excepcion de tipo
 
         currentScope.define(new VariableSymbol("z", t1));
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         VariableSymbol v3 = (VariableSymbol) currentScope.resolve("i");
         if(v3 ==  null) { } // Excepcion de tipo
@@ -79,6 +83,7 @@ public class AlcanceAnidado {
         if(t1 == null) { } // Excepcion de tipo
 
         currentScope.define(new VariableSymbol("i", t2));
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         currentScope = currentScope.getEnclosingScope();
 
@@ -87,6 +92,7 @@ public class AlcanceAnidado {
         if(returnType2 == null) { } // Excepcion de tipo
 
         currentScope = new MethodSymbol("g", parameters, currentScope);
+        System.out.printf(" %s contenido: %s\n", currentScope.getScopeName(), currentScope.print());
 
         MethodSymbol t4 = (MethodSymbol) currentScope.resolve("f");
         if(t4 == null) { } // Excepcion de tipo

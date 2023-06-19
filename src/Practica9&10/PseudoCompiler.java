@@ -40,7 +40,7 @@ public class PseudoCompiler {
         System.out.println("\nSintaxis correcta:  " + pParser.parse(tokens));
     }
 
-    public static void main(String[] args) {
-        new PseudoCompiler();
-    }
+    // public static void main(String[] args) {
+    //     new PseudoCompiler();
+    // }
 }

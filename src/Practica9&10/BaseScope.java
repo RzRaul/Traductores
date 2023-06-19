@@ -1,28 +1,17 @@
 import java.util.*;
 
-public class MethodSymbol extends Symbol implements Scope {
+public abstract class BaseScope implements Scope {
     Scope enclosingScope;
     Map<String, Symbol> members = new HashMap<String, Symbol>();
-
-    public MethodSymbol(String name, VariableSymbol[] orderedAtgs, Scope encloScope) {
-        super(name);
-        this.enclosingScope = encloScope;
-
-        if(orderedAtgs != null) {
-            for(VariableSymbol v : orderedAtgs) {
-                define(v);
-            }
-        }
+    
+    public BaseScope(Scope currentScope) {
+        this.enclosingScope = currentScope;
     }
-
-    public String getScopeName() {
-        return name;
-    }
-
+    
     public Scope getEnclosingScope() {
         return enclosingScope;
     }
-    
+
     public void define(Symbol sym) {
         members.put(sym.name, sym);
     }
@@ -32,10 +21,13 @@ public class MethodSymbol extends Symbol implements Scope {
 
         if(s!=null)
             return s;
-
+        
         if(enclosingScope != null)
             return enclosingScope.resolve(name);
         
         return null;
-    }   
+    }
+    public String print() {
+        return "" + members.values();
+    }
 }

@@ -12,6 +12,7 @@ public class SymbolTable implements Scope {
     public Scope getEnclosingScope() { return null; }
     public void define(Symbol sym) { symbols.put(sym.name, sym); }
     public Symbol resolve(String name) { return symbols.get(name); }
+    public String print() { return "" + symbols.values(); }
 
     public String toString() { return getScopeName();}
 }
