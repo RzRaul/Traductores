@@ -1,0 +1,3 @@
+public enum TokenType {
+    KEYWORD, NUMERAL, SYMBOL, IDENTIFIER, STRING, EOF
+}

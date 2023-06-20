@@ -1,5 +1,3 @@
-//Stivy Zavaleta 1263277
-//Practica no.3
 
 import java.io.FileReader;
 import java.io.IOException;
